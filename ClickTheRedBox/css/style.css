@@ -1,0 +1,338 @@
+﻿@import url("reset.css");
+body {
+	background-color:#f2f2f2;
+	font:14px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+	color:#333;
+}
+#main-wrapper {
+	max-width:960px;
+	margin:0 auto;
+	position:relative;
+	margin-top:12px;
+}
+.header {
+	margin:1px 0 0 0;
+}
+.logo {
+    /*float:left;*/
+    /*display:inline-block;*/
+    padding:0 0 0.4em;
+    font-family:'Aldrich', sans-serif;
+    font-size:34px;
+    line-height:42px;
+    text-align:center;
+}
+.logo a {
+    color:#333;
+    text-decoration:none;
+}
+.primary-nav 
+{
+    width:50%;
+    float:right;
+    text-align:right;
+    margin:0.3em 0 0 0;  
+}
+.secondary-nav {
+    margin-bottom:20px;
+    text-align:right;
+}
+#content-wrapper {
+	padding:20px 30px 30px;
+	min-height:0px;
+	background: none repeat scroll 0 0 #fff;
+	border-radius:4px;
+	box-shadow:0 1px 3px rgba(0,0,0,.35);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.3);
+	-moz-box-shadow:0 1px 3px rgba(0,0,0,.3);
+	border-color:#e5e5e5 #dbdbdb #d2d2d2;
+	position:relative;
+	color:#333;
+    text-align:center;
+}
+.box {
+    width:600px;
+    height:600;
+    margin:0 auto;
+    padding:0;
+    border:0;
+}
+.col_50 {
+    width:48%;
+    margin:0 2% 0 0;
+    float:left;
+}
+.col_33 {
+    width:31%;
+    margin:0 2% 0 0;
+    float:left;
+}
+.col_66 {
+    width:64%;
+    margin:0 2% 0 0;
+    float:left;
+}
+.col_100 {
+    width:100%;
+}
+.left {
+    text-align:left;
+}
+.right {
+    text-align:right;
+}
+.center {
+    text-align:center;
+}
+.img_floatleft {
+    float:left;
+    margin:0 10px 5px 0;
+}
+.img_floatright {
+    float:right;
+    margin:0 0 5px 10px;
+}
+.img {
+    max-width:100%;
+}
+#footer-wrapper {
+	max-width:960px;
+	
+	margin:18px auto 30px;
+	
+}
+ul, ol {
+    margin:1em 0;
+    padding: 0 0 0 2em;
+}
+ul li, ol li {
+    padding:0 0 0.4em 0;
+}
+.footer {
+    color:#888;
+	font-size:11px;
+    width:100%;
+    margin:0 10px;
+    text-align:left;
+}
+.clear {
+    clear:both;
+}
+h1 {
+    font-size:28px;
+    line-height:36px;
+    margin:22px 0 18px 0;
+    display:block;
+}
+h2 {
+	font-size:22px;
+	font-weight:bold;
+    margin:0 0 18px 0;
+    display:block;
+}
+h3 {
+    font-size:18px;
+    font-weight:bold;
+    margin:0 0 18px 0;
+    color:#999;
+    display:block;
+}
+p {
+    display:block;
+    margin:16px 0;
+}
+a {
+    text-decoration:underline;
+    color:#999;
+}
+a:hover {
+    color:#333;
+}
+div {
+    display:block;
+}
+.table-wrapper {
+    height:auto;
+	border-radius:5px;
+	border:1px solid #d1d5d8;
+	margin-bottom:50px;
+}
+.table {
+    width:100%;
+    display:table;
+}
+.table th {
+    height:25px;
+	padding:5px 0px 5px 6px;
+	background-color: #e9edf0;
+	font-size:12px;
+	font-weight:bold;
+	text-align: left;
+}
+.table tr:first-child {
+	border-top:none;
+}
+.table:first-child th{
+	/*border-radius:4px 4px 0 0;*/
+	border-top:none;
+}
+
+.table tr td:first-child {
+	border-left:none;
+}
+.table tr th {
+	border-bottom:1px solid #d1d5d8;
+	border-top:1px solid #d1d5d8;
+	vertical-align:middle;
+}
+.table tr {
+	height:32px;
+}
+.table tr td {
+	padding:6px 5px 6px 7px;
+	vertical-align: top;
+	width:306px;
+	height:20px;
+	border-top:1px dotted #d9d9d9;
+	border-left:1px dotted #d9d9d9;
+}
+.warning {
+    border: 1px solid #ec252e;
+    color: #fff;
+    padding: 8px 14px;
+    background: #EE3333;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+.success {
+    border: 1px solid #399f16;
+    color: #fff;
+    background: #61B245;
+    padding: 8px 14px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+.message {
+    border: 1px solid #dadada;
+    color: #000;
+    background: #f2f2f2;
+    padding: 8px 14px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+.button {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    outline:none;
+
+    color:#333;
+    border-color:#adadad;
+    background-color:#fff;
+}
+.gameButton {
+    display: inline-block;
+    padding:0;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 0;
+    border-radius: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    outline:none;
+    color:#333;
+    border-color:none;
+    background-color:none;
+    float:left;
+}
+/*.button:hover {
+    background-color:#ebebeb;
+}*/
+/*
+.button:active {
+    -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+}
+*/
+.button:focus {outline:0;}
+.code {
+    background-color:#eee;
+    padding:14px;
+    border:1px solid #999;
+}
+.signature {
+    font-family: 'La Belle Aurore', cursive;
+    font-size:33px;
+}
+@media only screen and (max-width:480px) { /* Smartphone*/
+    .header {
+        margin-bottom:0;
+    }
+    .logo {
+        display:block;
+        float:none;
+        text-align:center;
+    }
+    .primary-nav, .secondary-nav {
+        width:100%;
+        text-align:center;
+        float:none;
+        padding:0;
+        margin:1em 0 0 0;
+    }
+    .primary-nav a, .secondary-nav a {
+        display:inline-block;
+        padding:7px;
+    }
+    .footer {
+        text-align:center;
+    }
+    textarea {
+        width:100%;
+    }
+    label {
+        padding:10px 0 8px 0;
+    }
+}
+@media only screen and (max-width:768px) { /* Tablet */
+  .col_25,
+  .col_33,
+  .col_66,
+  .col_50 ,
+  .col_75  {
+    width:98%;
+    float:none;
+  } 
+  
+  label {
+    padding:10px 0 8px 0;
+  }
+}

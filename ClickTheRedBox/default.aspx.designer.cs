@@ -49,6 +49,15 @@ namespace ClickTheRedBox {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl level0;
         
         /// <summary>
+        /// lblHighScores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblHighScores;
+        
+        /// <summary>
         /// button0 control.
         /// </summary>
         /// <remarks>
@@ -2785,13 +2794,22 @@ namespace ClickTheRedBox {
         protected global::System.Web.UI.WebControls.Label lblYourScore;
         
         /// <summary>
-        /// lblHighScore control.
+        /// tbInitial control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHighScore;
+        protected global::System.Web.UI.WebControls.TextBox tbInitial;
+        
+        /// <summary>
+        /// btnSaveScore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSaveScore;
         
         /// <summary>
         /// button99 control.

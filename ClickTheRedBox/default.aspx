@@ -20,9 +20,15 @@
                     <asp:ScriptManager ID="scriptManager1" runat="server"></asp:ScriptManager>
                     <asp:UpdatePanel is="up1" runat="server" UpdateMode="Always">
                         <ContentTemplate>
-                            Score: <asp:Label ID="lblScore" runat="server"></asp:Label>
+                            <p class="right">
+                                Score: <asp:Label ID="lblScore" runat="server"></asp:Label>
+                            </p>
                             <div id="level0" runat="server" visible="false">
-                                <h2>High Score</h2>
+                                <h2>High Scores</h2>
+
+                                <p>
+                                    <asp:Label ID="lblHighScores" runat="server"></asp:Label>
+                                </p>
                                 
                                 <asp:Button ID="button0" runat="server" CssClass="button" Text="Start" OnClick="button_Click" CommandArgument="0" />
                             </div>
@@ -362,7 +368,11 @@
 
                             <div id="level99" runat="server" visible="false">
                                 <h3>Your Score: <asp:Label ID="lblYourScore" runat="server"></asp:Label></h3>
-                                <h4>High Score: <asp:Label ID="lblHighScore" runat="server"></asp:Label></h4>
+                                
+                                <p>
+                                    Initial: <asp:TextBox ID="tbInitial" runat="server"></asp:TextBox>
+                                    <asp:Button ID="btnSaveScore" runat="server" Text="Save Your Score" CssClass="button" OnClick="btnSaveScore_Click" />
+                                </p>
 
                                 <asp:Button ID="button99" runat="server" CssClass="button" Text="Restart" OnClick="button_Click" CommandArgument="99" />
                             </div>

@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Newtonsoft.Json;
 
 namespace ClickTheRedBox
 {
@@ -18,6 +21,7 @@ namespace ClickTheRedBox
                 //global = new Global();
                 Session["score"] = 0;
                 Session["lastRedButton"] = "";
+                displayHighScores();
             }
             else
             {
@@ -2062,9 +2066,10 @@ namespace ClickTheRedBox
 
                 case 100:
                     level99.Visible = false;
-                    level1.Visible = true;
+                    level0.Visible = true;
                     Session["lastRedButton"] = "button101";
                     Session["score"] = 0;
+                    displayHighScores();
                     break;
                 default:
                     break;
@@ -2083,6 +2088,48 @@ namespace ClickTheRedBox
                 array[r] = array[i];
                 array[i] = t;
             }
+        }
+
+        protected void btnSaveScore_Click(object sender, EventArgs e)
+        {
+            string filePath = Server.MapPath("/files/highscore.txt");
+            var jsonData = File.ReadAllText(filePath);
+            var scoreList = JsonConvert.DeserializeObject<List<HighScore>>(jsonData) ?? new List<HighScore>();
+
+            scoreList.Add(new HighScore()
+                {
+                    Name = tbInitial.Text, Score = Convert.ToInt32(lblYourScore.Text)
+                });
+
+            jsonData = JsonConvert.SerializeObject(scoreList);
+            File.WriteAllText(filePath, jsonData);
+
+            level99.Visible = false;
+            level0.Visible = true;
+            Session["lastRedButton"] = "button101";
+            Session["score"] = 0;
+            displayHighScores();
+        }
+
+        protected void displayHighScores()
+        {
+            //read high scores
+            //display high scores top 10
+            string filePath = Server.MapPath("/files/highscore.txt");
+            var jsonData = File.ReadAllText(filePath);
+            var scoreList = JsonConvert.DeserializeObject<List<HighScore>>(jsonData) ?? new List<HighScore>();
+
+            List<HighScore> sortedList = scoreList.OrderBy(o => -1* o.Score).ToList();
+
+            StringBuilder sbHighScores = new StringBuilder();
+
+            foreach (HighScore a in sortedList)
+            {
+                sbHighScores.AppendLine(a.Name + ":" + a.Score);
+                
+            }
+
+            lblHighScores.Text = sbHighScores.ToString().Replace(Environment.NewLine, "<br />");
         }
     }
 }

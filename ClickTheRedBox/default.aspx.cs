@@ -18,14 +18,9 @@ namespace ClickTheRedBox
             if (!IsPostBack)
             {
                 level0.Visible = true;
-                //global = new Global();
                 Session["score"] = 0;
                 Session["lastRedButton"] = "";
                 displayHighScores();
-            }
-            else
-            {
-
             }
         }
 
@@ -40,12 +35,12 @@ namespace ClickTheRedBox
             int score = 0;
             string[] colors = new string[126];
 
-            colors[0] = "#003366";
-            colors[1] = "#336699";
-            colors[2] = "#3366cc";
-            colors[3] = "#003399"; //
-            colors[4] = "#000099"; //
-            colors[5] = "#0000cc"; //
+            colors[0] = "#003366";//
+            colors[1] = "#336699";//
+            colors[2] = "#3366cc";//
+            colors[3] = "#003399";//
+            colors[4] = "#000099";//
+            colors[5] = "#0000cc";//
             colors[6] = "#000066";//
             colors[7] = "#006666";//
             colors[8] = "#006699";//
@@ -182,6 +177,8 @@ namespace ClickTheRedBox
                 case 2:
                     //1 random color
                     //2 buttons
+                    //Timer timer = timer1;
+                    
                     if (btn.ID == Session["lastRedButton"].ToString())
                     {
                         score = Convert.ToInt32(Session["score"]);
@@ -2206,7 +2203,7 @@ namespace ClickTheRedBox
         {
             //read high scores
             //display high scores top 10
-            string filePath = Server.MapPath("/files/highscore.txt");
+            string filePath = Server.MapPath("~/files/highscore.txt");
             var jsonData = File.ReadAllText(filePath);
             var scoreList = JsonConvert.DeserializeObject<List<HighScore>>(jsonData) ?? new List<HighScore>();
 

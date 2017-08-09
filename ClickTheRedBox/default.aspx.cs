@@ -2162,6 +2162,7 @@ namespace ClickTheRedBox
                 default:
                     break;
             }
+            tbInitial.Text = "";
             lblScore.Text = Session["score"].ToString();
         }
 
@@ -2180,7 +2181,7 @@ namespace ClickTheRedBox
 
         protected void btnSaveScore_Click(object sender, EventArgs e)
         {
-            string filePath = Server.MapPath("/files/highscore.txt");
+            string filePath = Server.MapPath("~/files/highscore.txt");
             var jsonData = File.ReadAllText(filePath);
             var scoreList = JsonConvert.DeserializeObject<List<HighScore>>(jsonData) ?? new List<HighScore>();
 
@@ -2203,6 +2204,7 @@ namespace ClickTheRedBox
         {
             //read high scores
             //display high scores top 10
+            int i = 1;
             string filePath = Server.MapPath("~/files/highscore.txt");
             var jsonData = File.ReadAllText(filePath);
             var scoreList = JsonConvert.DeserializeObject<List<HighScore>>(jsonData) ?? new List<HighScore>();
@@ -2213,8 +2215,10 @@ namespace ClickTheRedBox
 
             foreach (HighScore a in sortedList)
             {
+                if (i > 10)
+                    break;
                 sbHighScores.AppendLine(a.Name + ":" + a.Score);
-                
+                i++;
             }
 
             lblHighScores.Text = sbHighScores.ToString().Replace(Environment.NewLine, "<br />");
